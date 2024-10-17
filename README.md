@@ -21,13 +21,26 @@ The [saved models](results/Model_Data) can be loaded via tensorflow model load. 
 *NOTE: Exam_Score is the target column and can be ignored during normalization for model predictions.*
 
 ## Preprocessing
-### Dataset visualization
+### Dataset inspection and visualization
+The dataset had no duplicates but several NULL values were found in columns. `78` in `Teacher_Quality`, `90` in `Parental_Education_Level`, and `67` in `Distance_from_Home`. Although, these NULL values can be replaced with the highest frequency or the median data but the entries were dropped so as to preserve the original data. The final shape of the data (rows x columns) is `(6378, 20)`. Out of 20 columns, 7 had numeric values included the target column, `Exam_Scores`. The **heatmap** of the correlation matrix can be used to find the correlations of `Exam_Score`:
+
+![Heatmap1](results/__results___files/__results___11_1.png)
 
 ### One-hot encoding
+Apart from the 7 columns with numeric data, others had data in string format. The strings are categorically placed, e.g., for column `Parental_Involvement`, the only categorical strings used are Low, Medium and High. Similarly, for other columns, all the string data are categorical.
 
 ### Normalization
+The numerical data of the 7 columns (not one-hot encoded) are normalized using min-max scaling to normalize the values between 0 to 1. This can be later helpful for the regression where the output layer activation function is `sigmoid` which returns the output between 0 to 1. The **heatmap** of the correlation matrix, keeping `Exam_Score` as focus, does not differ greatly from the previous ones indicating the correlation between the one-hot encoded columns are not significant.
+
+![Heatmap2](results/__results___files/__results___16_1.png)
+
+Here, all the 7 columns including the target column `Exam_Score` are normalized.
 
 ### Classification Segregation
+The normalization are passed through similary but for the target column `Exam_Score`, it is not normalized. Rather, it is cut into different bins of its Gaussian distribution. This enables to segregate the data and classify the Exam Score as a part of a range and not a definite value (regression).\
+The range of the classification -> **50-60**, **60-65**, **65-70**, **70-75**, **75-80**, **80-110**.
+
+Additionally, the categorized target column is kept in two different formats to serve in two different models. One is the normal 1D array for Sparse Categorical Crossentropy and the other is one-hot encoded for Categorical Crossentropy.
 
 ## Model
 ### Regression
