@@ -44,16 +44,88 @@ Additionally, the categorized target column is kept in two different formats to 
 
 ## Model
 ### Regression
+![CNN_Regression](results/__results___files/CNN-Regression.png)
+
+- Output Activation -> Sigmoid
+- Loss -> Mean Absolute Error (MAE)
+- Optimizer -> ADAM
+- Metrics -> MAE and R2 Score
+- Epochs -> 100
+- Batch size -> 64
 
 ### Classification
 #### Basic Model
+![CNN_Regression](results/__results___files/CNN-1.png)
 
+- Output Activation -> Softmax
+- Loss -> Categorical Crossentropy
+- Optimizer -> ADAM
+- Metrics -> Accuracy, Loss, F1 Score and Precision
+- Epochs -> 100
+- Batch size -> 64
+
+F1 Score and Precision are calculated during training and evaluation both.
+  
 #### Basic Model with added layers
+![CNN_Regression](results/__results___files/CNN-2.png)
+
+- Output Activation -> Softmax
+- Loss -> Sparse Categorical Crossentropy
+- Optimizer -> ADAM
+- Metrics -> Accuracy and Loss
+- Epochs -> 100
+- Batch size -> 64
+
+F1 Score and Precision not supported for Sparse Categorical Crossentropy by default. They are calculated with the evaluation data after training.
 
 ## Results
 ### Regression
+- Graphs
+  R2 Score | MAE
+  --- | ---
+  ![CNN_Regression R2](results/__results___files/__results___62_0.png) | ![CNN_Regression_MAE](results/__results___files/__results___63_0.png)
+
+- MAE -> 0.0121
+- R2 Score -> 0.6974
+- Testing
+  
+  ![CNN_Regression_Test](results/__results___files/CNN-Regression-Test.png)
 
 ### Classification
 #### Basic Model
+- Graphs
+  Accuracy | Loss |
+  --- | ---
+  ![CNN_1_Accuracy](results/__results___files/__results___76_0.png) | ![CNN_1_Loss](results/__results___files/__results___77_0.png)
+
+  F1 Score | Precision |
+  --- | ---
+  ![CNN_1_F1](results/__results___files/__results___78_0.png) | ![CNN_1_Precision](results/__results___files/__results___79_0.png)
+
+- Accuracy -> 0.9321
+- Loss -> 0.3473
+- F1 Score -> 0.9049
+- Precision -> 0.9321
+- Testing
+  
+  ![CNN_Regression_Test](results/__results___files/CNN-1-Test.png)
+
+  Range of the classification -> **50-60 (0)**, **60-65 (1)**, **65-70 (2)**, **70-75 (3)**, **75-80 (4)**, **80-110 (5)**
 
 #### Basic Model with added layers
+- Graphs
+  Accuracy | Loss |
+  --- | ---
+  ![CNN_1_Accuracy](results/__results___files/__results___92_0.png) | ![CNN_1_Loss](results/__results___files/__results___93_0.png)
+
+  (F1 Score and Precision are calculated only during evaluation and not training)
+
+- Accuracy -> 0.8426
+- Loss -> 0.4649
+- F1 Score -> 0.6805
+- Precision -> 0.8681
+- Testing
+  
+  ![CNN_Regression_Test](results/__results___files/CNN-2-Test.png)
+
+  Range of the classification -> **50-60 (0)**, **60-65 (1)**, **65-70 (2)**, **70-75 (3)**, **75-80 (4)**, **80-110 (5)**
