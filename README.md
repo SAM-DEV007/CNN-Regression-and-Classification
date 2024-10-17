@@ -19,3 +19,28 @@ The plots can be found [here](results/__results___files) but is recommended to r
 
 The [saved models](results/Model_Data) can be loaded via tensorflow model load. It is mandatory to normalize the input data using the min-max scaling. The file is located [here](results/minmax.pkl). The minimum and maximum values used for normalization for each column [Hours_Studied, Attendance, Sleep_Hours, Previous_Scores, Tutoring_Sessions, Physical_Activity, Exam_Score] is saved in a 2D list.\
 *NOTE: Exam_Score is the target column and can be ignored during normalization for model predictions.*
+
+## Preprocessing
+### Dataset visualization
+
+### One-hot encoding
+
+### Normalization
+
+### Classification Segregation
+
+## Model
+### Regression
+
+### Classification
+#### Basic Model
+
+#### Basic Model with added layers
+
+## Results
+### Regression
+
+### Classification
+#### Basic Model
+
+#### Basic Model with added layers
