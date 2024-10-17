@@ -1,7 +1,7 @@
 # CNN-Regression-and-Classification
 Regression and Classification of data using CNN
 
-The kaggle notebook can be found [here](https://www.kaggle.com/code/samyak03/cnn-regression-and-classification).
+The [notebook](cnn-regression-and-classification.ipynb) and [data](results) are migrated from Kaggle to Github. The kaggle notebook can be found [here](https://www.kaggle.com/code/samyak03/cnn-regression-and-classification).
 
 ## Summary
 The aim is to accurately and consistently find the exam scores of students influenced by various factors like hours studied, attendance, access to resources and many more. The dataset can be found [here](https://www.kaggle.com/datasets/lainguyn123/student-performance-factors).
